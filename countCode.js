@@ -2,12 +2,13 @@ const data = ["FWmcfgAWxe","KnFJXGcACq","cCYApSPiX0","iHwbq2giBx","X5Ebl6sjLf","
 
 function countCode(letter) {
     let count = 0;
-    data.forEach(element => {
+
+    for (let i = 0; i < data.length; i++) {
+        let element = data[i];
         if (element.startsWith(letter)) {
             count++; 
         }
-         
-    });
+    }
 
     return count;
 }
