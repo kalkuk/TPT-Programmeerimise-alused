@@ -1,0 +1,49 @@
+<head><h1 id="title" onclick="muuda()">Pealkiri</h1></head>
+<script>
+    function muuda(){
+        document.getElementById("title").innerHTML = "Title";
+    }
+</script>
+<body>
+    
+    <div>
+    
+    
+    
+    <ul id="list">
+        <li>Timo</li>
+        <li>Kalle</li>
+    </ul>
+
+ 
+
+<script>
+    let array = [
+        {"nimi": "Timo", "telefon": "55555"},
+        {"nimi": "Kalle", "telefon": "55544"},
+        {"nimi": "Marko", "telefon": "53344"},
+        {"nimi": "Eric", "telefon": "77744"},
+    ]
+    //let html=""
+    //for (let i=0; i< array.length; i++){
+        //html+= "<li>"+ array[i].nimi + "</li>" 
+        //}
+        //document.getElementById("list").innerHTML = html
+        
+        document.getElementById("list").innerHTML = ""//kustutab listi tühjaks
+        for (let i=0; i< array.length; i++){
+            let list = document.createElement("li")
+            list.textContent = array[i].nimi
+            list.lastStatus = true
+            list.onclick = function() {
+                if (list.lastStatus)
+                    list.textContent = array[i].telefon
+                else
+                    list.textContent = array[i].nimi
+                list.lastStatus = !list.lastStatus
+            }
+            document.querySelector("#list").append(list)
+        }
+</script>
+</div>
+</body>
